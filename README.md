@@ -1,5 +1,6 @@
-# Laney CIS61A
-Classwork and projects for CIS61A
+# Laney Computer Science
 
+This is a consolidated repository for all of my CS classes. 
 
-- Due to size, the ants project is missing the img folder
+- CIS 25 - C++ 
+- CIS 61A - Interpretation of Computer Programs (Python)

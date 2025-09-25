@@ -8,9 +8,9 @@
 .global main
 
 main:
-    # Save return to OS on stack
-    SUB sp, sp, #4
-    STR lr, [sp, #0]
+    # Save return to OS on stack and maintain 8-byte alignment for variadic calls
+    SUB sp, sp, #8
+    STR lr, [sp, #4]
 
     # Prompt for an input
     LDR r0, =prompt
@@ -27,9 +27,10 @@ main:
     LDR r1, [r1, #0]
     BL printf
 
-    # Return to the OS
-    LDR lr, [sp, #0]
-    ADD sp, sp, #4
+    # Return to the OS (set exit code to 0)
+    MOV r0, #0
+    LDR lr, [sp, #4]
+    ADD sp, sp, #8
     MOV pc, lr
 
 .data

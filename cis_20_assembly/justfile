@@ -2,5 +2,5 @@ build:
     docker build -t arm-assembly .
 
 run file: 
-    docker run --rm arm-assembly ./{{file}}
+    docker run -it --rm arm-assembly ./{{file}}
     

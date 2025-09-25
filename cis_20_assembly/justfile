@@ -1,0 +1,6 @@
+build:
+    docker build -t arm-assembly .
+
+run file: 
+    docker run --rm arm-assembly ./{{file}}
+    

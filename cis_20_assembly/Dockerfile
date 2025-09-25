@@ -7,14 +7,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /work
 
-COPY ./lab_1/helloWorldMain.s /work/
+# COPY ./lab_2/helloWorldMain.s /work/   
+COPY ./lab_2/printNameMain.s /work/   
+
 
 # defaults for Raspberry Pi 2/3/4 (ARMv7, hard-float)
 ENV CFLAGS="-O2 -march=armv7-a -mfpu=neon-vfpv4 -mfloat-abi=hard" \
     CC="gcc"
 
 # Compile at build time
-RUN $CC $CFLAGS helloWorldMain.s -o helloWorld
+# RUN $CC $CFLAGS helloWorldMain.s -o helloWorld
+RUN $CC $CFLAGS printNameMain.s -o printName
 
 # Drop into a shell by default
 CMD ["bash"]
@@ -27,4 +30,6 @@ CMD ["bash"]
 # docker build -t arm-assembly .
 
 # Run the program in the container
+
 # docker run --rm arm-assembly ./helloWorld
+# docker run -it --rm arm-assembly ./printName

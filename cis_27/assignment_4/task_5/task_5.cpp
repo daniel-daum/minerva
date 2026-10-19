@@ -86,7 +86,8 @@ public:
   }
 
   // method 6: output middle value
-  void output_middle_value() {}
+  void output_middle_value() { std::cout << numbers[1000 / 2] << "\n"; }
+
   // method 7: output first value in the array
   void output_first_value() {
     std::cout << "first value in array: " << numbers[0] << "\n";
@@ -165,17 +166,17 @@ int main() {
 
   Algorithms task5;
 
-  task5.output_all_values();
-  task5.output_sum_all_values();
-  task5.output_all_odd();
-  task5.output_all_even();
-  task5.linear_search(379);
-  task5.output_middle_value();
-  task5.output_first_value();
-  task5.output_last_value();
-  task5.output_highest_value_loc();
-  task5.output_lowest_value_loc();
-  task5.bubble_sort();
+  // task5.output_all_values();
+  // task5.output_sum_all_values();
+  // task5.output_all_odd();
+  // task5.output_all_even();
+  // task5.linear_search(379);
+  // task5.output_middle_value();
+  // task5.output_first_value();
+  // task5.output_last_value();
+  // task5.output_highest_value_loc();
+  // task5.output_lowest_value_loc();
+  // task5.bubble_sort();
   task5.mean_average();
 
   return 0;
